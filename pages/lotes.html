@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Fabio Riveras-Negocios ganaderos</title>
+    <link rel="icon" href="../img/rodeo (Logo).svg">
+</head>
+
+<body>
+    <!--<header> 
+        <nav>
+            <div class="nav-brand"><img class="nav-brand" src="../img/rodeo (Logo).svg" alt="">
+                <h1>Negocios y trámites ganaderos</h1>
+            </div> 
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./lotes.html">Lotes</a></li>
+                <li><a href="./precios.html">Precios</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+                <li><a href="./iniciarsesion.html">Iniciar Sesion</a></li>
+            </ul>
+        </nav>
+    </header>-->
+    <header> <!--nav bootstrap-->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="nav-brand">
+                    <a href="../index.html"><img class="nav-brand" src="../img/rodeo (Logo).svg" alt=""></a>
+                </div>
+                <a class="navbar-brand" href="#">
+                    <h1>Negocios y trámites ganaderos</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/lotes.html">Lotes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/precios.html">Precios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/iniciarsesion.html">Iniciar Sesion</a>
+                        </li>
+
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                            <button class="buscar-boton" type="submit">Buscar</button>
+                        </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero"> <!--inicio secsion hero-->
+            <h2>LOTES DE HACIENDA</h2>
+        </section> <!--finaliza seccion hero-->
+
+        <section class="pedidos-hacienda"> <!--inicia sesion pedidos-->
+            <h2>PEDIDOS</h2>
+            <div class="container-pedidos">
+                <div class="card">
+                    <h3>60 terneros</h3>
+                    <p class="location">Gualeguay, Entre Ríos</p>
+                    <p class="kg">180 KG</p>
+                    <button>OFERTAR</button>
+                </div>
+
+                <div class="card">
+                    <h3>80 terneras</h3>
+                    <p class="location">Villaguay, Entre Ríos</p>
+                    <p class="kg">200 KG</p>
+                    <button>OFERTAR</button>
+                </div>
+
+                <div class="card">
+                    <h3>70 vacas preñadas</h3>
+                    <p class="location">Córdoba, Córdoba</p>
+                    <button>OFERTAR</button>
+                </div>
+            </div>
+        </section><!--finaliza sesion pedidos-->
+
+        <section class="lotes-disponibles"> <!--inica sesion lotes-->
+            <h2>LOTES DISPONIBLES</h2>
+            <div class="container-lotes-disponibles">
+                <div class="card">
+                    <video src="../img/terneros.mp4" controls></video>
+                    <h2>200 terneros machos</h2>
+                    <p class="price">$3500</p>
+                    <p class="location">Córdoba, Córdoba </p>
+                    <p class="kg">200kg</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                    <img src="../img/vaca con cria.jpg" alt="">
+                    <h2>Vaca con cría</h2>
+                    <p class="price">$900.000 la pieza</p>
+                    <p class="location">Caseros, Entre Ríos</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                    <img src="../img/vaquillonas.jpg" alt="">
+                    <h2>7 vaquillonas</h2>
+                    <p class="price">$3.000</p>
+                    <p class="location">Corrientes, Corrientes</p>
+                    <p class="kg">400 kg</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                    <img src="../img/11 NVTO INVERNADA.jpg" alt="">
+                    <h2>11 novillitos de Invernada</h2>
+                    <p class="price">$2.800</p>
+                    <p class="location">Alem, Misiones</p>
+                    <p class="kg">250 kg</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                    <img src="../img/2 TOROS PD COLORADAS.jpg" alt="">
+                    <h2>2 toros pedigree</h2>
+                    <p class="price">$3.000.000 c/u</p>
+                    <p class="location">Villaguay, Enter Ríos</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                <img src="../img/2 VAQUILLONAS.jpg" alt="">
+                    <h2>Vaquillonas para faena</h2>
+                    <p class="price">$3000 x kg</p>
+                    <p class="location">Santa Fe, Santa Fe</p>
+                    <p class="kg">00 kg</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                    <img src="../img/Toro PD.jpg" alt="">
+                    <h2>TORO 2 DIENTES</h2>
+                    <p class="price">$1.500.000</p>
+                    <p class="location">Monte Caseros, Buenas Aires</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                    <img src="../img/VACA PD COLORADA.jpg" alt="">
+                    <h2>Vaquillona preñada primera parición</h2>
+                    <p class="price">$1.200.000</p>
+                    <p class="location">Monte Caseros, Buenos Aires</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                    <img src="../img/VACA PD NEGRA.jpg" alt="">
+                    <h2>Vaca preñada 2da parición</h2>
+                    <p class="price">$1.000.000</p>
+                    <p class="location">Lucas Norte, Entre Ríos</p>
+                    <button>Comprar</button>
+                </div>
+
+                <div class="card">
+                <img src="../img/VAQUILLONAS PRIMERA PARICION.jpg" alt="">
+                    <h2>20 vaquillonas de primera parición</h2>
+                    <p class="price">$800.000 c/u</p>
+                    <p class="location">San José, Entre Ríos</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+        </section><!--finaliza sesion lotes-->
+        <section> <!--paginacion bootstrap-->
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link">Anterior</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer><!--inicio de footer-->
+        <img class="logo" src="../img/logo footer.png" alt=>
+        <div class="social-icons"> <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <img src="../img/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                <img src="../img/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://outlook.live.com/owa/" target="_blank" rel="noopener noreferrer">
+                <img src="../img/mail.png" alt="Correo Electrónico">
+            </a>
+        </div>
+        <img src="../img/vaca footer.png" alt="Silueta de Vaca decorativa" class="footer-vaca">
+    </footer><!--final de footer-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
