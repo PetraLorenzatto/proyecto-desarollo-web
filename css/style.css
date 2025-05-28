@@ -75,11 +75,10 @@ background-color: #6F826A
 }
 .hero {
     display: flex; 
-    flex-direction: column; /* Apilamos los elementos en columna */
-    justify-content: center; /* Centramos verticalmente (a lo largo del eje principal, que ahora es la columna) */
-    align-items: center; /* Centramos horizontalmente (a lo largo del eje transversal) */
-    /* Añade un alto mínimo para que puedas ver el efecto de centrado */
-    min-height: 400px; /* Ejemplo de alto para la sección hero */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 400px; 
     background-image: url(../img/IMG-20250430-WA0032.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -141,12 +140,12 @@ background-color: #6F826A
 
 /* Contenedor Flex para los beneficios */
 .beneficios-container {
-    display: flex; /* ¡Aquí activamos Flexbox! */
-    flex-wrap: wrap; /* Permite que los ítems salten a la siguiente línea si no hay espacio */
-    justify-content: center; /* Centra los ítems horizontalmente cuando hay espacio */
-    gap: 30px; /* Espacio entre los bloques de beneficios */
-    max-width: 1200px; /* Ancho máximo para el contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 /* Estilos para cada bloque de beneficio */
@@ -194,53 +193,52 @@ background-color: #6F826A
 .destacados {
     text-align: center; /* Centra el h2 */
     padding: 40px 20px;
-    background-color: #eef7ff; /* Un fondo suave para esta sección */
+    background-color: #eef7ff; 
     border-bottom: 15px solid #6F826A;
 }
 
 .destacados h2 {
     font-size: 2.5em;
     color: #2c3e50;
-    margin-bottom: 40px; /* Más espacio debajo del título */
+    margin-bottom: 40px; 
 }
 
 /* Contenedor Flex para los lotes destacados */
 .destacados-container {
-    display: flex; /* ¡Activamos Flexbox en este contenedor! */
-    flex-wrap: wrap; /* Permite que los lotes salten a la siguiente línea si no hay espacio */
-    justify-content: center; /* Centra los ítems horizontalmente */
-    gap: 30px; /* Espacio entre los bloques de lotes */
-    max-width: 1200px; /* Ancho máximo para el contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 /* Estilos para cada bloque de lote individual */
 .terneros,
 .vaca-cria,
 .vaquillonas {
-    flex-basis: 320px; /* Tamaño base de cada ítem antes de crecer/encoger */
-    flex-grow: 1; /* Permite que los ítems crezcan para ocupar el espacio disponible */
-    flex-shrink: 1; /* Permite que los ítems se encojan si no hay suficiente espacio */
+    flex-basis: 320px; 
+    flex-grow: 1; 
+    flex-shrink: 1; 
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
     padding: 20px;
     text-align: center;
-    /* Usamos Flexbox también aquí para alinear el contenido verticalmente */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra horizontalmente el contenido de cada tarjeta */
-    justify-content: space-between; /* Distribuye el espacio para que el botón siempre esté abajo */
+    align-items: center; 
+    justify-content: space-between; 
 }
 
 .terneros video,
 .vaca-cria img,
 .vaquillonas img {
-    width: 100%; /* Las imágenes/video ocupan el ancho completo del contenedor del lote */
-    max-width: 300px; /* Limita el ancho máximo para no deformarse en contenedores muy grandes */
-    height: 200px; /* Altura fija para mantener consistencia */
-    object-fit: cover; /* Asegura que la imagen/video cubra el área sin distorsionarse */
-    border-radius: 8px; /* Bordes redondeados para medios */
+    width: 100%; 
+    max-width: 300px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 8px; 
     margin-bottom: 15px;
 }
 
@@ -279,7 +277,7 @@ background-color: #6F826A
 .registro {
     text-align: center; /* Centra el h2 */
     padding: 40px 20px;
-    background-color: #f0f4f7; /* Un fondo suave para esta sección */
+    background-color: #f0f4f7; 
     border-bottom: 15px solid #6F826A;
 }
 
@@ -291,12 +289,12 @@ background-color: #6F826A
 
 /* Estilos para el formulario en sí, que será nuestro contenedor Flex */
 .registro-form {
-    display: flex; /* ¡Activamos Flexbox en el formulario! */
-    flex-wrap: wrap; /* Permite que los grupos de campos se envuelvan a la siguiente línea */
-    justify-content: center; /* Centra los grupos de campos horizontalmente */
-    gap: 20px 30px; /* Espacio vertical y horizontal entre los grupos de campos */
-    max-width: 800px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centra el formulario en la página */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px 30px; 
+    max-width: 800px;
+    margin: 0 auto; 
     padding: 30px;
     background-color: #fff;
     border-radius: 10px;
@@ -305,29 +303,28 @@ background-color: #6F826A
 
 /* Estilos para cada grupo de campo (label + input/select) */
 .form-group {
-    display: flex; /* Activamos Flexbox dentro de cada grupo para alinear label y input */
-    flex-direction: column; /* Apila label y input verticalmente */
-    align-items: flex-start; /* Alinea el label y el input a la izquierda */
-    flex: 1 1 calc(50% - 15px); /* Esto es para que ocupen casi el 50% del ancho, creando 2 columnas */
-    /* flex: 1 1 calc(50% - (gap_horizontal / 2)) */
-    min-width: 280px; /* Ancho mínimo para que no se hagan demasiado pequeños */
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    flex: 1 1 calc(50% - 15px);
+    min-width: 280px; 
 }
 
 .form-group label {
     font-weight: bold;
     margin-bottom: 8px;
     color: #333;
-    display: block; /* Asegura que la etiqueta tome su propia línea si es necesario */
+    display: block; 
 }
 
 .form-group input,
 .form-group select {
-    width: 100%; /* El input/select ocupa todo el ancho disponible en su grupo */
+    width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1em;
-    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    box-sizing: border-box; 
 }
 
 .form-group input:focus,
@@ -348,9 +345,8 @@ background-color: #6F826A
     font-size: 1.1em;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    margin-top: 20px; /* Espacio arriba del botón */
-    width: auto; /* Ancho automático, o puedes usar width: 100% para que ocupe todo el ancho si lo prefieres */
-    /* Para que el botón ocupe toda la línea inferior */
+    margin-top: 20px; 
+    width: auto; 
     flex-basis: 100%; /* Ocupa el 100% del ancho disponible para que esté solo en su línea */
     max-width: 300px; /* Opcional: limita el ancho del botón */
 }
@@ -363,14 +359,14 @@ background-color: #6F826A
 
 /* Estilos para el contenedor del footer */
 footer {
-    display: flex; /* ¡Aquí activamos Flexbox en el footer! */
-    justify-content: space-between; /* Distribuye el espacio: el logo al inicio, los íconos al centro, la vaca al final */
-    align-items: center; /* Alinea los ítems verticalmente al centro */
-    padding: 20px 40px; /* Un poco de padding interno */
-    background-color: #6F826A; /* Color de fondo oscuro para el footer */
-    color: white; /* Color del texto si tuvieras */
-    flex-wrap: wrap; /* Permite que los ítems salten a la siguiente línea en pantallas pequeñas */
-    gap: 20px; /* Espacio entre los elementos del footer */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 40px; 
+    background-color: #6F826A; 
+    color: white; 
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
 
 /* Estilos para el logo principal del footer */
@@ -419,7 +415,7 @@ footer {
 .pedidos-hacienda {
     text-align: center; /*  el h2 */
     padding: 40px 20px;
-    background-color: #eef7ff; /* Un fondo suave para esta sección */
+    background-color: #eef7ff; 
     border-bottom: 15px solid #6F826A;
 
 }
@@ -430,18 +426,18 @@ footer {
     color: #333;
 }
 .container-pedidos {
-    display: flex; /* ¡Activamos Flexbox en este contenedor! */
-    flex-wrap: wrap; /* Permite que los lotes salten a la siguiente línea si no hay espacio */
-    justify-content: center; /* Centra los ítems horizontalmente */
-    gap: 30px; /* Espacio entre los bloques de lotes */
-    max-width: 1200px; /* Ancho máximo para el contenedor */
-    margin: 0 auto; /* Centra el contenedor en la página */
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 .lotes-disponibles{
     text-align: center; /* Centra el h2 */
     padding: 40px 20px;
-    background-color: #fff; /* Un fondo suave para esta sección */
+    background-color: #fff; 
     border-bottom: 15px solid #6F826A;
 }
 .lotes-disponibles h2{
