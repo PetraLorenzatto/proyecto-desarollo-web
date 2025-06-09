@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,86 @@
     <title>Fabio Riveras-Negocios ganaderos</title>
     <link rel="icon" href="../img/rodeo (Logo).svg">
 </head>
+
 <body>
-    <header>  <!-- encabezado de la pagina-->
-        <nav> <!--barra de navegación-->
-        <div class="nav-brand"><img class="nav-brand" src="../img/rodeo (Logo).svg" alt=""><!--logo-->
-                <h1>Negocios y trámites ganaderos</h1>
-            </div> <!--titulo principal (calculo que no va a ser necesario)-->
-            <ul>
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./lotes.html">Lotes</a></li>
-                <li><a href="./precios.html">Precios</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li><a href="./iniciarsesion.html">Iniciar Sesion</a></li>
-            </ul>
+    <header> <!--nav bootstrap-->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="nav-brand">
+                    <a href="../index.html"><img class="nav-brand" src="../img/rodeo (Logo).svg" alt=""></a>
+                </div>
+                <a class="navbar-brand" href="#">
+                    <h1>Negocios y trámites ganaderos</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/lotes.html">Lotes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/precios.html">Precios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/iniciarsesion.html">Iniciar Sesion</a>
+                        </li>
+
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                            <button class="buscar-boton" type="submit">Buscar</button>
+                        </form>
+                </div>
+            </div>
         </nav>
     </header>
-    
+    <main class="iniciarsesion">
+        <div class="login-container">
+            <h1>Iniciar Sesión</h1>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+                <button type="submit">Entrar</button>
+                <div class="links">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                    <a href="#">Registrarse</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer><!--inicio de footer-->
+        <img class="logo" src="../img/logo footer.png" alt=>
+        <div class="social-icons"> <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <img src="../img/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                <img src="../img/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://outlook.live.com/owa/" target="_blank" rel="noopener noreferrer">
+                <img src="../img/mail.png" alt="Correo Electrónico">
+            </a>
+        </div>
+        <img src="../img/vaca footer.png" alt="Silueta de Vaca decorativa" class="footer-vaca">
+    </footer><!--final de footer-->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 </body>
+
 </html>
