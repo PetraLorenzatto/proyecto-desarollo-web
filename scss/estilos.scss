@@ -1,0 +1,362 @@
+
+$primary-color: #63422b;
+$secondary-color: #6F826A;
+$light-bg: #ece8e5;
+$dark-text: #333;
+$light-text: #fff;
+$gray-text: #666;
+$border-thickness: 15px;
+
+
+@mixin button-styles($bg-color: $primary-color, $text-color: $light-text) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Serif Display", serif;
+}
+
+.container-fluid {
+    padding: 10px 20px;
+    background-color: $light-bg;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-top: $border-thickness solid $secondary-color;
+    border-bottom: $border-thickness solid $secondary-color;
+}
+
+.navbar {
+    padding: 0px 0px !important;
+
+    /* Estilos para el contenedor del logo y título */
+    &-brand {
+        display: flex;
+        align-items: center; // Centra verticalmente el logo y el título
+        gap: 10px; // Espacio entre el logo y el título
+
+        img {
+            height: 100px; // Ajusta el tamaño del logo
+            width: auto; // Para mantener la proporción
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 0;
+            color: $dark-text;
+        }
+    }
+
+    /* Estilos para la lista de navegación */
+    .nav-link {
+        color: $primary-color !important;
+
+        &:hover {
+            color: $secondary-color !important;
+        }
+    }
+}
+
+.buscar-boton {
+    @include button-styles();
+    padding: 12px 25px;
+    margin-top: auto;
+}
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background-image: url(../img/IMG-20250430-WA0032.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    border-bottom: $border-thickness solid $secondary-color;
+    padding: 20px; // Espaciado interno
+    text-align: center;
+
+    h2 {
+        margin-bottom: 20px; // Espacio entre el título y el botón
+        color: $light-bg;
+        font-size: 2.5em;
+    }
+
+    button {
+        @include button-styles();
+        padding: 15px 30px;
+
+        a {
+            color: $light-bg;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    }
+}
+
+
+.beneficios {
+    text-align: center; 
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-bottom: $border-thickness solid $secondary-color;
+
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        color: $dark-text;
+    }
+
+    > p {
+        font-size: 1.1em;
+        color: $gray-text;
+        margin-bottom: 30px;
+    }
+
+    
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    
+    .tropa,
+    .cotiza,
+    .precios {
+        flex-basis: 300px; // Tamaño base de cada ítem antes de crecer/encoger
+        flex-grow: 1; // Permite que los ítems crezcan para ocupar el espacio disponible
+        flex-shrink: 1; // Permite que los ítems se encojan si no hay espacio
+        background-color: $light-text;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        text-align: center;
+        display: flex; // Convierto cada bloque en flex para alinear su contenido verticalmente
+        flex-direction: column; // Apila el contenido verticalmente (imagen, h3, p)
+        align-items: center; // Centra el contenido (imagen, h3, p) horizontalmente
+
+        img {
+            width: 100px; // Tamaño de los iconos
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+        }
+    }
+}
+
+.destacados {
+    text-align: center; 
+    padding: 40px 20px;
+    background-color: #eef7ff;
+    border-bottom: $border-thickness solid $secondary-color;
+
+    h2 {
+        font-size: 2.5em;
+        color: #2c3e50;
+        margin-bottom: 40px;
+    }
+
+    
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .terneros,
+    .vaca-cria,
+    .vaquillonas {
+        flex-basis: 320px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        background-color: $light-text;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        video,
+        img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #444;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 20px; 
+        }
+
+        button {
+            @include button-styles();
+            padding: 12px 25px;
+            margin-top: auto; 
+        }
+    }
+}
+
+.registro {
+    text-align: center; 
+    padding: 40px 20px;
+    background-color: #f0f4f7;
+    border-bottom: $border-thickness solid $secondary-color;
+
+    h2 {
+        font-size: 2.2em;
+        color: #2c3e50;
+        margin-bottom: 30px;
+    }
+
+    
+    &-form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px 30px;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: $light-text;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1 1 calc(50% - 15px);
+        min-width: 280px;
+
+        label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: $dark-text;
+            display: block;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+
+            &:focus {
+                border-color: $secondary-color;
+                outline: none;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+            }
+        }
+    }
+}
+
+
+.submit-button {
+    @include button-styles();
+    padding: 15px 30px;
+    margin-top: 20px;
+    width: auto;
+    flex-basis: 100%; // Ocupa el 100% del ancho disponible para que esté solo en su línea
+    max-width: 300px; // Opcional: limita el ancho del botón
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: $secondary-color;
+    color: $light-text;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    
+    .logo {
+        height: 100px;
+        width: 100px;
+        flex-shrink: 0;
+        margin: 0px 0px 0px !important;
+    }
+
+    
+    .social-icons {
+        display: flex; 
+        gap: 15px; 
+        flex-shrink: 0; 
+        flex-grow: 0; 
+        order: 2; 
+
+        img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    .footer-vaca {
+        height: 100px;
+        width: 100px;
+        opacity: 0.7;
+        flex-shrink: 0;
+        order: 3;
+        margin: 0px 0px 0px !important;
+    }
+}
