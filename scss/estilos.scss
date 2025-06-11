@@ -1,29 +1,76 @@
-
+// Variables
+$font-stack: "DM Serif Display", serif;
 $primary-color: #63422b;
 $secondary-color: #6F826A;
 $light-bg: #ece8e5;
 $dark-text: #333;
-$light-text: #fff;
-$gray-text: #666;
-$border-thickness: 15px;
+$medium-text: #555;
+$light-text: #666;
+$shadow-light: rgba(0, 0, 0, 0.1);
+$shadow-medium: rgba(0, 0, 0, 0.15);
+$shadow-dark: rgba(99, 66, 43, 1);
+$border-color: #6F826A;
+$link-color: #63422b;
+$hover-link-color: #6F826A;
+$button-hover-color: #6F826A;
+$hero-text-color: #ece8e5;
+$section-bg-light: #f9f9f9;
+$section-bg-medium: #eef7ff;
+$section-bg-dark: #f0f4f7;
+$input-border: #ddd;
+$input-focus-border: #6F826A;
+$input-focus-shadow: rgba(0, 123, 255, 0.2);
 
-
-@mixin button-styles($bg-color: $primary-color, $text-color: $light-text) {
+// Mixins
+@mixin button-styles($bg-color: $primary-color, $text-color: white, $padding: 12px 25px) {
     background-color: $bg-color;
     color: $text-color;
-    padding: 12px 25px;
+    padding: $padding;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
     transition: background-color 0.3s ease;
+}
 
-    &:hover {
-        background-color: $secondary-color;
+@mixin section-base($bg-color, $padding: 40px 20px) {
+    text-align: center;
+    padding: $padding;
+    background-color: $bg-color;
+    border-bottom: 15px solid $border-color;
+}
+
+@mixin card-styles($flex-basis: 300px) {
+    flex-basis: $flex-basis;
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px $shadow-light;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin form-input-styles {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $input-border;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+
+    &:focus {
+        border-color: $input-focus-border;
+        outline: none;
+        box-shadow: 0 0 5px $input-focus-shadow;
     }
 }
 
+// Estilo general
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
 * {
@@ -33,29 +80,29 @@ $border-thickness: 15px;
 }
 
 body {
-    font-family: "DM Serif Display", serif;
+    font-family: $font-stack;
 }
 
+// Header
 .container-fluid {
     padding: 10px 20px;
     background-color: $light-bg;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-top: $border-thickness solid $secondary-color;
-    border-bottom: $border-thickness solid $secondary-color;
+    box-shadow: 0 2px 5px $shadow-light;
+    border-top: 15px solid $border-color;
+    border-bottom: 15px solid $border-color;
 }
 
 .navbar {
     padding: 0px 0px !important;
 
-    /* Estilos para el contenedor del logo y título */
     &-brand {
         display: flex;
-        align-items: center; // Centra verticalmente el logo y el título
-        gap: 10px; // Espacio entre el logo y el título
+        align-items: center;
+        gap: 10px;
 
         img {
-            height: 100px; // Ajusta el tamaño del logo
-            width: auto; // Para mantener la proporción
+            height: 100px;
+            width: auto;
         }
 
         h1 {
@@ -64,24 +111,26 @@ body {
             color: $dark-text;
         }
     }
+}
 
-    /* Estilos para la lista de navegación */
-    .nav-link {
-        color: $primary-color !important;
+.nav-link {
+    color: $link-color !important;
 
-        &:hover {
-            color: $secondary-color !important;
-        }
+    &:hover {
+        color: $hover-link-color !important;
     }
 }
 
 .buscar-boton {
     @include button-styles();
-    padding: 12px 25px;
     margin-top: auto;
+
+    &:hover {
+        background-color: $button-hover-color;
+    }
 }
 
-
+// Hero Section
 .hero {
     display: flex;
     flex-direction: column;
@@ -93,13 +142,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    border-bottom: $border-thickness solid $secondary-color;
-    padding: 20px; // Espaciado interno
+    border-bottom: 15px solid $border-color;
+    padding: 20px;
     text-align: center;
 
     h2 {
-        margin-bottom: 20px; // Espacio entre el título y el botón
-        color: $light-bg;
+        margin-bottom: 20px;
+        color: $hero-text-color;
         font-size: 2.5em;
     }
 
@@ -108,20 +157,21 @@ body {
         padding: 15px 30px;
 
         a {
-            color: $light-bg;
+            color: $hero-text-color;
             text-decoration: none;
             font-size: 1.2em;
             font-weight: bold;
         }
+
+        &:hover {
+            background-color: $button-hover-color;
+        }
     }
 }
 
-
+// Beneficios Section
 .beneficios {
-    text-align: center; 
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    border-bottom: $border-thickness solid $secondary-color;
+    @include section-base($section-bg-light);
 
     h2 {
         font-size: 2.2em;
@@ -131,11 +181,10 @@ body {
 
     > p {
         font-size: 1.1em;
-        color: $gray-text;
+        color: $light-text;
         margin-bottom: 30px;
     }
 
-    
     &-container {
         display: flex;
         flex-wrap: wrap;
@@ -145,24 +194,13 @@ body {
         margin: 0 auto;
     }
 
-    
     .tropa,
     .cotiza,
     .precios {
-        flex-basis: 300px; // Tamaño base de cada ítem antes de crecer/encoger
-        flex-grow: 1; // Permite que los ítems crezcan para ocupar el espacio disponible
-        flex-shrink: 1; // Permite que los ítems se encojan si no hay espacio
-        background-color: $light-text;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 25px;
-        text-align: center;
-        display: flex; // Convierto cada bloque en flex para alinear su contenido verticalmente
-        flex-direction: column; // Apila el contenido verticalmente (imagen, h3, p)
-        align-items: center; // Centra el contenido (imagen, h3, p) horizontalmente
+        @include card-styles();
 
         img {
-            width: 100px; // Tamaño de los iconos
+            width: 100px;
             height: auto;
             margin-bottom: 15px;
         }
@@ -175,17 +213,15 @@ body {
 
         p {
             font-size: 1em;
-            color: #555;
+            color: $medium-text;
             line-height: 1.6;
         }
     }
 }
 
+// Destacados Section
 .destacados {
-    text-align: center; 
-    padding: 40px 20px;
-    background-color: #eef7ff;
-    border-bottom: $border-thickness solid $secondary-color;
+    @include section-base($section-bg-medium);
 
     h2 {
         font-size: 2.5em;
@@ -193,7 +229,6 @@ body {
         margin-bottom: 40px;
     }
 
-    
     &-container {
         display: flex;
         flex-wrap: wrap;
@@ -201,6 +236,17 @@ body {
         gap: 30px;
         max-width: 1200px;
         margin: 0 auto;
+
+        div {
+            transition: 1s;
+
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 10px 7px 34px -8px $shadow-dark;
+                -webkit-box-shadow: 10px 7px 34px -8px $shadow-dark;
+                -moz-box-shadow: 10px 7px 34px -8px $shadow-dark;
+            }
+        }
     }
 
     .terneros,
@@ -209,9 +255,9 @@ body {
         flex-basis: 320px;
         flex-grow: 1;
         flex-shrink: 1;
-        background-color: $light-text;
+        background-color: white;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 5px 15px $shadow-medium;
         padding: 20px;
         text-align: center;
         display: flex;
@@ -234,22 +280,23 @@ body {
             color: #444;
             font-weight: bold;
             margin-top: 10px;
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
         }
 
         button {
             @include button-styles();
-            padding: 12px 25px;
-            margin-top: auto; 
+            margin-top: auto;
+
+            &:hover {
+                background-color: $button-hover-color;
+            }
         }
     }
 }
 
+// Registro Section
 .registro {
-    text-align: center; 
-    padding: 40px 20px;
-    background-color: #f0f4f7;
-    border-bottom: $border-thickness solid $secondary-color;
+    @include section-base($section-bg-dark);
 
     h2 {
         font-size: 2.2em;
@@ -257,7 +304,6 @@ body {
         margin-bottom: 30px;
     }
 
-    
     &-form {
         display: flex;
         flex-wrap: wrap;
@@ -266,65 +312,56 @@ body {
         max-width: 800px;
         margin: 0 auto;
         padding: 30px;
-        background-color: $light-text;
+        background-color: white;
         border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex: 1 1 calc(50% - 15px);
-        min-width: 280px;
-
-        label {
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: $dark-text;
-            display: block;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1em;
-            box-sizing: border-box;
-
-            &:focus {
-                border-color: $secondary-color;
-                outline: none;
-                box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-            }
-        }
+        box-shadow: 0 5px 15px $shadow-medium;
     }
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 calc(50% - 15px);
+    min-width: 280px;
+
+    label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: $dark-text;
+        display: block;
+    }
+
+    input,
+    select {
+        @include form-input-styles;
+    }
+}
 
 .submit-button {
     @include button-styles();
     padding: 15px 30px;
     margin-top: 20px;
     width: auto;
-    flex-basis: 100%; // Ocupa el 100% del ancho disponible para que esté solo en su línea
-    max-width: 300px; // Opcional: limita el ancho del botón
+    flex-basis: 100%;
+    max-width: 300px;
+
+    &:hover {
+        background-color: $button-hover-color;
+    }
 }
 
-
+// Footer
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: $secondary-color;
-    color: $light-text;
+    background-color: $border-color;
+    color: white;
     flex-wrap: wrap;
     gap: 20px;
 
-    
     .logo {
         height: 100px;
         width: 100px;
@@ -332,13 +369,12 @@ footer {
         margin: 0px 0px 0px !important;
     }
 
-    
     .social-icons {
-        display: flex; 
-        gap: 15px; 
-        flex-shrink: 0; 
-        flex-grow: 0; 
-        order: 2; 
+        display: flex;
+        gap: 15px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        order: 2;
 
         img {
             width: 30px;
@@ -358,5 +394,396 @@ footer {
         flex-shrink: 0;
         order: 3;
         margin: 0px 0px 0px !important;
+    }
+}
+
+// PAGINA LOTES
+.pedidos-hacienda {
+    @include section-base($section-bg-medium);
+
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        color: $dark-text;
+    }
+}
+
+.container-pedidos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.lotes-disponibles {
+    @include section-base(white);
+
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        color: $dark-text;
+    }
+
+    .container-lotes-disponibles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        div {
+            transition: 1s;
+
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 10px 7px 34px -8px $shadow-dark;
+                -webkit-box-shadow: 10px 7px 34px -8px $shadow-dark;
+                -moz-box-shadow: 10px 7px 34px -8px $shadow-dark;
+            }
+        }
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px $shadow-light;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+        font-size: 1.5em;
+        color: $dark-text;
+        margin-bottom: 10px;
+    }
+
+    video,
+    img {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .price {
+        font-size: 1.2em;
+        color: #2c3e50;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .location,
+    .kg {
+        font-size: 0.9em;
+        color: $light-text;
+        margin-bottom: 15px;
+    }
+
+    button {
+        @include button-styles();
+        padding: 10px 15px;
+        margin-top: auto;
+
+        &:hover {
+            background-color: $button-hover-color;
+        }
+    }
+}
+
+// PAGINA CONTACTO
+.datos {
+    @include section-base($section-bg-light);
+
+    h2 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        color: $dark-text;
+    }
+
+    > p {
+        font-size: 1.1em;
+        color: $light-text;
+        margin-bottom: 30px;
+    }
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .telefono,
+    .direcion,
+    .mail {
+        @include card-styles();
+
+        h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1em;
+            color: $medium-text;
+            line-height: 1.6;
+        }
+    }
+}
+
+.mensaje {
+    @include section-base($section-bg-dark);
+    padding: 20px;
+    background-color: $section-bg-light;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px $shadow-light;
+
+    h2 {
+        text-align: center;
+        color: $dark-text;
+        margin-bottom: 30px;
+    }
+
+    &-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .form-group {
+        flex: 1;
+        min-width: 280px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: $medium-text;
+        }
+
+        input,
+        .box-mensaje textarea {
+            @include form-input-styles;
+        }
+    }
+
+    .box-mensaje {
+        flex-basis: 100%;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: $medium-text;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+    }
+
+    .submit-button {
+        display: block;
+        width: 100%;
+        padding: 12px 20px;
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+
+        &:hover {
+            background-color: $button-hover-color;
+        }
+    }
+}
+
+.map {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// PAGINA INICIAR SESION
+.iniciarsesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, $section-bg-medium, white);
+    overflow: hidden;
+
+    .login-container {
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px $shadow-light;
+        text-align: center;
+        width: 350px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInSlideUp 0.8s forwards ease-out;
+    }
+
+    h1 {
+        color: $dark-text;
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: $medium-text;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+            border: 1px solid $input-border;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+            &:focus {
+                border-color: #007bff;
+                box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+                outline: none;
+            }
+        }
+    }
+
+    button[type="submit"] {
+        @include button-styles();
+        font-size: 1.1em;
+        margin-top: 20px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+            background-color: $button-hover-color;
+            transform: translateY(-2px);
+        }
+    }
+
+    .links {
+        margin-top: 25px;
+        font-size: 0.9em;
+
+        a {
+            color: $link-color;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $hover-link-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        animation: subtleBackground 15s infinite alternate ease-in-out;
+        z-index: -1;
+    }
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtleBackground {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+// Media Queries para responsividad
+@media screen and (max-width: 454px) {
+    .navbar-brand h1 {
+        flex-direction: column;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lotes-disponibles {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+
+        img[src*="rodeo"] {
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            margin-bottom: 15px;
+            order: 1;
+        }
+
+        .footer-vaca {
+            margin-top: 15px;
+            order: 3;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .lotes-disponibles {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-group {
+        flex: 1 1 100%;
     }
 }

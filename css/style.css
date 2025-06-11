@@ -202,6 +202,17 @@ background-color: #6F826A
     margin: 0 auto; 
 }
 
+/*animacion para tarjetas destacados*/
+.destacados .destacados-container div{
+    transition: 1s;
+}
+.destacados .destacados-container div:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 7px 34px -8px rgba(99,66,43,1);
+    -webkit-box-shadow: 10px 7px 34px -8px rgba(99,66,43,1);
+    -moz-box-shadow: 10px 7px 34px -8px rgba(99,66,43,1);
+}
+
 /* Estilos para cada bloque de lote individual */
 .terneros,
 .vaca-cria,
@@ -443,6 +454,17 @@ footer {
     padding: 20px;
     max-width: 1200px; /* Ancho máximo del contenedor de la cuadrícula */
     margin: 0 auto; /* Centrar el contenedor */
+}
+
+/*Animacion*/
+.lotes-disponibles .container-lotes-disponibles div{
+    transition: 1s;
+}
+.lotes-disponibles .container-lotes-disponibles div:hover{
+    transform: scale(1.1);
+    box-shadow: 10px 7px 34px -8px rgba(99,66,43,1);
+    -webkit-box-shadow: 10px 7px 34px -8px rgba(99,66,43,1);
+    -moz-box-shadow: 10px 7px 34px -8px rgba(99,66,43,1);
 }
 
 .card {

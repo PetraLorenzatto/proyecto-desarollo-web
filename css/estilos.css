@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 * {
   margin: 0;
@@ -20,8 +19,6 @@ body {
 
 .navbar {
   padding: 0px 0px !important;
-  /* Estilos para el contenedor del logo y título */
-  /* Estilos para la lista de navegación */
 }
 .navbar-brand {
   display: flex;
@@ -37,16 +34,17 @@ body {
   margin: 0;
   color: #333;
 }
-.navbar .nav-link {
+
+.nav-link {
   color: #63422b !important;
 }
-.navbar .nav-link:hover {
+.nav-link:hover {
   color: #6F826A !important;
 }
 
 .buscar-boton {
   background-color: #63422b;
-  color: #fff;
+  color: white;
   padding: 12px 25px;
   border: none;
   border-radius: 5px;
@@ -54,7 +52,6 @@ body {
   font-size: 1em;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  padding: 12px 25px;
   margin-top: auto;
 }
 .buscar-boton:hover {
@@ -83,7 +80,7 @@ body {
 }
 .hero button {
   background-color: #63422b;
-  color: #fff;
+  color: white;
   padding: 12px 25px;
   border: none;
   border-radius: 5px;
@@ -93,14 +90,14 @@ body {
   transition: background-color 0.3s ease;
   padding: 15px 30px;
 }
-.hero button:hover {
-  background-color: #6F826A;
-}
 .hero button a {
   color: #ece8e5;
   text-decoration: none;
   font-size: 1.2em;
   font-weight: bold;
+}
+.hero button:hover {
+  background-color: #6F826A;
 }
 
 .beneficios {
@@ -133,7 +130,7 @@ body {
   flex-basis: 300px;
   flex-grow: 1;
   flex-shrink: 1;
-  background-color: #fff;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 25px;
@@ -183,13 +180,22 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+.destacados-container div {
+  transition: 1s;
+}
+.destacados-container div:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 7px 34px -8px rgb(99, 66, 43);
+  -webkit-box-shadow: 10px 7px 34px -8px rgb(99, 66, 43);
+  -moz-box-shadow: 10px 7px 34px -8px rgb(99, 66, 43);
+}
 .destacados .terneros,
 .destacados .vaca-cria,
 .destacados .vaquillonas {
   flex-basis: 320px;
   flex-grow: 1;
   flex-shrink: 1;
-  background-color: #fff;
+  background-color: white;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   padding: 20px;
@@ -225,7 +231,7 @@ body {
 .destacados .vaca-cria button,
 .destacados .vaquillonas button {
   background-color: #63422b;
-  color: #fff;
+  color: white;
   padding: 12px 25px;
   border: none;
   border-radius: 5px;
@@ -233,7 +239,6 @@ body {
   font-size: 1em;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  padding: 12px 25px;
   margin-top: auto;
 }
 .destacados .terneros button:hover,
@@ -261,25 +266,26 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 30px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
-.registro .form-group {
+
+.form-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   flex: 1 1 calc(50% - 15px);
   min-width: 280px;
 }
-.registro .form-group label {
+.form-group label {
   font-weight: bold;
   margin-bottom: 8px;
   color: #333;
   display: block;
 }
-.registro .form-group input,
-.registro .form-group select {
+.form-group input,
+.form-group select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ddd;
@@ -287,8 +293,8 @@ body {
   font-size: 1em;
   box-sizing: border-box;
 }
-.registro .form-group input:focus,
-.registro .form-group select:focus {
+.form-group input:focus,
+.form-group select:focus {
   border-color: #6F826A;
   outline: none;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
@@ -296,7 +302,7 @@ body {
 
 .submit-button {
   background-color: #63422b;
-  color: #fff;
+  color: white;
   padding: 12px 25px;
   border: none;
   border-radius: 5px;
@@ -320,7 +326,7 @@ footer {
   align-items: center;
   padding: 20px 40px;
   background-color: #6F826A;
-  color: #fff;
+  color: white;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -352,6 +358,398 @@ footer .footer-vaca {
   flex-shrink: 0;
   order: 3;
   margin: 0px 0px 0px !important;
+}
+
+.pedidos-hacienda {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #eef7ff;
+  border-bottom: 15px solid #6F826A;
+}
+.pedidos-hacienda h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.container-pedidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lotes-disponibles {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: white;
+  border-bottom: 15px solid #6F826A;
+}
+.lotes-disponibles h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+.lotes-disponibles .container-lotes-disponibles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.lotes-disponibles .container-lotes-disponibles div {
+  transition: 1s;
+}
+.lotes-disponibles .container-lotes-disponibles div:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 7px 34px -8px rgb(99, 66, 43);
+  -webkit-box-shadow: 10px 7px 34px -8px rgb(99, 66, 43);
+  -moz-box-shadow: 10px 7px 34px -8px rgb(99, 66, 43);
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+.card video,
+.card img {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+.card .price {
+  font-size: 1.2em;
+  color: #2c3e50;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.card .location,
+.card .kg {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+.card button {
+  background-color: #63422b;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  padding: 10px 15px;
+  margin-top: auto;
+}
+.card button:hover {
+  background-color: #6F826A;
+}
+
+.datos {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-bottom: 15px solid #6F826A;
+}
+.datos h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+.datos > p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 30px;
+}
+.datos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.datos .telefono,
+.datos .direcion,
+.datos .mail {
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.datos .telefono h3,
+.datos .direcion h3,
+.datos .mail h3 {
+  font-size: 1.4em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+.datos .telefono p,
+.datos .direcion p,
+.datos .mail p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.mensaje {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f0f4f7;
+  border-bottom: 15px solid #6F826A;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.mensaje h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+.mensaje-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.mensaje .form-group {
+  flex: 1;
+  min-width: 280px;
+}
+.mensaje .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+.mensaje .form-group input,
+.mensaje .form-group .box-mensaje textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+.mensaje .form-group input:focus,
+.mensaje .form-group .box-mensaje textarea:focus {
+  border-color: #6F826A;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+.mensaje .box-mensaje {
+  flex-basis: 100%;
+}
+.mensaje .box-mensaje label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+.mensaje .box-mensaje textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.mensaje .submit-button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #63422b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+.mensaje .submit-button:hover {
+  background-color: #6F826A;
+}
+
+.map {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.iniciarsesion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #eef7ff, white);
+  overflow: hidden;
+}
+.iniciarsesion .login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 0.8s forwards ease-out;
+}
+.iniciarsesion h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+.iniciarsesion .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.iniciarsesion .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: bold;
+}
+.iniciarsesion .form-group input[type=text],
+.iniciarsesion .form-group input[type=password] {
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.iniciarsesion .form-group input[type=text]:focus,
+.iniciarsesion .form-group input[type=password]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+.iniciarsesion button[type=submit] {
+  background-color: #63422b;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-size: 1.1em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.iniciarsesion button[type=submit]:hover {
+  background-color: #6F826A;
+  transform: translateY(-2px);
+}
+.iniciarsesion .links {
+  margin-top: 25px;
+  font-size: 0.9em;
+}
+.iniciarsesion .links a {
+  color: #63422b;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+.iniciarsesion .links a:hover {
+  color: #6F826A;
+  text-decoration: underline;
+}
+.iniciarsesion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: subtleBackground 15s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes subtleBackground {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@media screen and (max-width: 454px) {
+  .navbar-brand h1 {
+    flex-direction: column;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .lotes-disponibles {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  footer img[src*=rodeo] {
+    margin-bottom: 15px;
+  }
+  footer .social-icons {
+    margin-bottom: 15px;
+    order: 1;
+  }
+  footer .footer-vaca {
+    margin-top: 15px;
+    order: 3;
+  }
+}
+@media screen and (max-width: 480px) {
+  .lotes-disponibles {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .form-group {
+    flex: 1 1 100%;
+  }
 }
 
 /*# sourceMappingURL=estilos.css.map */
