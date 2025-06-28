@@ -74,9 +74,10 @@ body {
   text-align: center;
 }
 .hero h2 {
-  margin-bottom: 20px;
-  color: #ece8e5;
-  font-size: 2.5em;
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: normal;
 }
 .hero button {
   background-color: #63422b;
@@ -108,13 +109,15 @@ body {
 }
 .beneficios h2 {
   font-size: 2.2em;
-  margin-bottom: 10px;
   color: #333;
+  margin-bottom: 10px;
+  font-weight: normal;
 }
 .beneficios > p {
   font-size: 1.1em;
   color: #666;
   margin-bottom: 30px;
+  font-weight: normal;
 }
 .beneficios-container {
   display: flex;
@@ -389,8 +392,9 @@ footer .footer-vaca {
 }
 .lotes-disponibles h2 {
   font-size: 2.2em;
-  margin-bottom: 10px;
   color: #333;
+  margin-bottom: 10px;
+  font-weight: normal;
 }
 .lotes-disponibles .container-lotes-disponibles {
   display: grid;
@@ -421,9 +425,10 @@ footer .footer-vaca {
   justify-content: space-between;
 }
 .card h2 {
-  font-size: 1.5em;
+  font-size: 2.2em;
   color: #333;
   margin-bottom: 10px;
+  font-weight: normal;
 }
 .card video,
 .card img {
@@ -471,13 +476,15 @@ footer .footer-vaca {
 }
 .datos h2 {
   font-size: 2.2em;
-  margin-bottom: 10px;
   color: #333;
+  margin-bottom: 10px;
+  font-weight: normal;
 }
 .datos > p {
   font-size: 1.1em;
   color: #666;
   margin-bottom: 30px;
+  font-weight: normal;
 }
 .datos-container {
   display: flex;
