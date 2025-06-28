@@ -102,15 +102,20 @@ body {
 .navbar {
     padding: 0px 0px !important;
 
+    img{
+        height: 60px;
+        width: auto;
+    }
+
     &-brand {
         display: flex;
         align-items: center;
         gap: 10px;
 
-        img {
-            height: 100px;
-            width: auto;
-        }
+       /* img {
+            height: 40px;
+            width: 30px;
+        }*/
 
         h1 {
             font-size: 1.5em;
@@ -154,7 +159,7 @@ body {
     text-align: center;
 
     h2 {
-        @include text-style(2.2em, $dark-text, 10px);
+        @include text-style(2.2em, white, 10px);
     }
 
     button {
@@ -535,79 +540,6 @@ footer {
     }
 }
 
-.mensaje {
-    @include section-base($section-bg-dark);
-    padding: 20px;
-    background-color: $section-bg-light;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 900px;
-    box-shadow: 0 4px 8px $shadow-light;
-
-    h2 {
-        text-align: center;
-        color: $dark-text;
-        margin-bottom: 30px;
-    }
-
-    &-form {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .form-group {
-        flex: 1;
-        min-width: 280px;
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: $medium-text;
-        }
-
-        input,
-        .box-mensaje textarea {
-            @include form-input-styles;
-        }
-    }
-
-    .box-mensaje {
-        flex-basis: 100%;
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: $medium-text;
-        }
-
-        textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-    }
-
-    .submit-button {
-        display: block;
-        width: 100%;
-        padding: 12px 20px;
-        background-color: $primary-color;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-top: 20px;
-
-        &:hover {
-            background-color: $button-hover-color;
-        }
-    }
-}
-
 .map {
     display: flex;
     flex-wrap: wrap;
@@ -737,29 +669,23 @@ footer {
 }
 
 // Media Queries para responsividad
-@media screen and (max-width: 454px) {
-    .navbar-brand h1 {
-        flex-direction: column;
-        font-size: 15px;
-    }
-}
 
 @media screen and (max-width: 768px) {
-    .lotes-disponibles {
+    .lotes-disponibles .container-lotes-disponibles {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     footer {
         flex-direction: column;
         text-align: center;
-
-        img[src*="rodeo"] {
-            margin-bottom: 15px;
+        padding: 15px 20px; 
+        .logo {
+            margin-bottom: 15px; 
         }
 
         .social-icons {
             margin-bottom: 15px;
-            order: 1;
+            order: 1; 
         }
 
         .footer-vaca {
@@ -767,16 +693,260 @@ footer {
             order: 3;
         }
     }
-}
 
-@media screen and (max-width: 480px) {
-    .lotes-disponibles {
-        grid-template-columns: 1fr;
+    .navbar-brand {
+        flex-direction: column; 
+        align-items: center;
+        text-align: center;
+        gap: 5px; 
+    }
+
+    .navbar-brand img {
+        height: 80px; 
+    }
+
+    .navbar-brand h1 {
+        font-size: 1.2em; 
+    }
+
+    
+    .hero {
+        min-height: 300px; 
+        padding: 15px;
+        h2 {
+            font-size: 1.8em;
+        }
+        button {
+            padding: 10px 20px; 
+            a {
+                font-size: 1em; // Reduce el tamaño de la fuente del botón
+            }
+        }
+    }
+
+    .beneficios, .destacados, .registro, .pedidos-hacienda, .datos, .mensaje {
+        padding: 20px 15px; // Ajusta el padding de las secciones
+        h2 {
+            font-size: 1.8em; // Reduce el tamaño de los títulos de sección
+            margin-bottom: 20px;
+        }
+        > p {
+            font-size: 1em; // Reduce el tamaño del texto descriptivo
+            margin-bottom: 20px;
+        }
+    }
+
+    .beneficios-container, .destacados-container, .container-pedidos, .datos-container {
+        gap: 20px; // Reduce el espacio entre las tarjetas
+    }
+
+    .tropa, .cotiza, .precios, .terneros, .vaca-cria, .vaquillonas, .telefono, .direcion, .mail {
+        padding: 20px; // Ajusta el padding de las tarjetas
+        img {
+            width: 80px; // Reduce el tamaño de las imágenes en las tarjetas
+        }
+        h3 {
+            font-size: 1.2em; // Reduce el tamaño de los subtítulos de las tarjetas
+        }
+        p {
+            font-size: 0.9em; // Reduce el tamaño del texto de las tarjetas
+        }
+    }
+
+    .registro-form, .mensaje-form {
+        padding: 20px; // Ajusta el padding de los formularios
+        gap: 15px; // Reduce el espacio entre los campos del formulario
+    }
+
+    .form-group {
+        flex: 1 1 100%; // Cada campo ocupa el 100% del ancho
+        min-width: unset; // Elimina el min-width
+    }
+
+    .submit-button {
+        padding: 12px 20px; // Ajusta el padding del botón
+        max-width: 100%; // Ocupa todo el ancho disponible
+    }
+
+    .iniciarsesion .login-container {
+        width: 90%; // Ocupa un porcentaje del ancho para adaptarse mejor
+        padding: 30px 20px; // Ajusta el padding
+    }
+
+    .iniciarsesion h1 {
+        font-size: 1.8em; 
+    }
+
+    .iniciarsesion .form-group input {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    .iniciarsesion button[type="submit"] {
+        font-size: 1em; 
+        padding: 10px 20px;
+    }
+
+    .iniciarsesion .links {
+        font-size: 0.8em; 
+        margin-top: 15px;
+    }
+
+    .map {
+        padding: 0 15px; 
     }
 }
 
-@media (max-width: 600px) {
-    .form-group {
-        flex: 1 1 100%;
+@media screen and (max-width: 454px) {
+    .navbar-brand h1 {
+        flex-direction: column; // Ya estaba, pero lo mantengo aquí para claridad
+        font-size: 15px; // Ajusta el tamaño de la fuente para pantallas muy pequeñas
+    }
+}
+
+// Media Query para 480px y menos (aplicando al grid de lotes)
+@media screen and (max-width: 480px) {
+    .lotes-disponibles .container-lotes-disponibles {
+        grid-template-columns: 1fr; // Cada lote ocupa el 100% del ancho
+    }
+}
+
+// Media Query para 350px y menos (ajustes finos para pantallas muy pequeñas)
+@media screen and (max-width: 350px) {
+    body {
+        font-size: 14px; // Reduce el tamaño de la fuente base para pantallas diminutas
+    }
+
+    .container-fluid {
+        padding: 10px; // Reduce el padding general
+    }
+
+    .navbar-brand img {
+        height: 70px; // Más pequeño para 350px
+    }
+
+    .navbar-brand h1 {
+        font-size: 1em; // Ajuste aún más pequeño
+    }
+
+    .hero {
+        min-height: 250px; // Altura mínima para el hero
+        h2 {
+            font-size: 1.5em; // Título más pequeño
+        }
+        button {
+            padding: 8px 15px; // Botón más pequeño
+            a {
+                font-size: 0.9em;
+            }
+        }
+    }
+
+    .beneficios, .destacados, .registro, .pedidos-hacienda, .datos, .mensaje {
+        padding: 15px 10px; // Padding mínimo para secciones
+        h2 {
+            font-size: 1.6em; // Títulos de sección más pequeños
+            margin-bottom: 15px;
+        }
+        > p {
+            font-size: 0.9em; // Texto descriptivo más pequeño
+            margin-bottom: 15px;
+        }
+    }
+
+    .beneficios-container, .destacados-container, .container-pedidos, .datos-container {
+        gap: 15px; // Espacio mínimo entre tarjetas
+    }
+
+    .tropa, .cotiza, .precios, .terneros, .vaca-cria, .vaquillonas, .telefono, .direcion, .mail {
+        padding: 15px; // Padding mínimo para tarjetas
+        img {
+            width: 70px; // Imágenes más pequeñas
+        }
+        h3 {
+            font-size: 1.1em; // Subtítulos de tarjetas más pequeños
+        }
+        p {
+            font-size: 0.85em; // Texto de tarjetas más pequeño
+        }
+    }
+
+    .card {
+        padding: 15px; // Padding de las tarjetas de lotes
+        video, img {
+            height: 150px; // Altura de video/imagen de lote
+        }
+        .price {
+            font-size: 1.1em; // Precio más pequeño
+        }
+        .location, .kg {
+            font-size: 0.8em; // Texto de ubicación/kg más pequeño
+        }
+        button {
+            padding: 8px 12px; // Botón de lote más pequeño
+            font-size: 0.9em;
+        }
+    }
+
+    .registro-form, .mensaje-form {
+        padding: 15px; // Padding de formularios
+        gap: 10px; // Espacio entre campos
+    }
+
+    .form-group label {
+        font-size: 0.9em; // Etiquetas de formulario más pequeñas
+    }
+
+    .form-group input, .form-group select, .box-mensaje textarea {
+        padding: 10px; // Inputs más pequeños
+        font-size: 0.9em;
+    }
+
+    .submit-button {
+        padding: 10px 15px; // Botón de envío más pequeño
+        font-size: 1em;
+    }
+
+    footer {
+        padding: 15px 10px; // Padding del footer
+        .logo, .footer-vaca {
+            height: 80px; // Logos del footer más pequeños
+            width: 80px;
+        }
+        .social-icons img {
+            width: 25px; // Iconos sociales más pequeños
+            height: 25px;
+        }
+        p {
+            font-size: 0.85em; // Texto del footer más pequeño
+        }
+    }
+
+    .iniciarsesion .login-container {
+        width: 95%; // Ocupa casi todo el ancho disponible
+        padding: 20px 15px; // Padding reducido
+    }
+
+    .iniciarsesion h1 {
+        font-size: 1.5em; // Título de login más pequeño
+        margin-bottom: 20px;
+    }
+
+    .iniciarsesion .form-group label {
+        font-size: 0.85em; // Etiquetas de login más pequeñas
+    }
+
+    .iniciarsesion .form-group input {
+        padding: 8px; // Inputs de login más pequeños
+        font-size: 0.9em;
+    }
+
+    .iniciarsesion button[type="submit"] {
+        font-size: 0.9em; // Botón de login más pequeño
+        padding: 8px 15px;
+    }
+
+    .iniciarsesion .links {
+        font-size: 0.75em; // Enlaces de login más pequeños
     }
 }

@@ -20,14 +20,18 @@ body {
 .navbar {
   padding: 0px 0px !important;
 }
+.navbar img {
+  height: 60px;
+  width: auto;
+}
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-.navbar-brand img {
-  height: 100px;
-  width: auto;
+  /* img {
+       height: 40px;
+       width: 30px;
+   }*/
 }
 .navbar-brand h1 {
   font-size: 1.5em;
@@ -75,7 +79,7 @@ body {
 }
 .hero h2 {
   font-size: 2.2em;
-  color: #333;
+  color: white;
   margin-bottom: 10px;
   font-weight: normal;
 }
@@ -524,83 +528,6 @@ footer .footer-vaca {
   line-height: 1.6;
 }
 
-.mensaje {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #f0f4f7;
-  border-bottom: 15px solid #6F826A;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  margin: 20px auto;
-  max-width: 900px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.mensaje h2 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 30px;
-}
-.mensaje-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.mensaje .form-group {
-  flex: 1;
-  min-width: 280px;
-}
-.mensaje .form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #555;
-}
-.mensaje .form-group input,
-.mensaje .form-group .box-mensaje textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1em;
-  box-sizing: border-box;
-}
-.mensaje .form-group input:focus,
-.mensaje .form-group .box-mensaje textarea:focus {
-  border-color: #6F826A;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-}
-.mensaje .box-mensaje {
-  flex-basis: 100%;
-}
-.mensaje .box-mensaje label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #555;
-}
-.mensaje .box-mensaje textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-.mensaje .submit-button {
-  display: block;
-  width: 100%;
-  padding: 12px 20px;
-  background-color: #63422b;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-.mensaje .submit-button:hover {
-  background-color: #6F826A;
-}
-
 .map {
   display: flex;
   flex-wrap: wrap;
@@ -722,21 +649,16 @@ footer .footer-vaca {
     transform: scale(1.1);
   }
 }
-@media screen and (max-width: 454px) {
-  .navbar-brand h1 {
-    flex-direction: column;
-    font-size: 15px;
-  }
-}
 @media screen and (max-width: 768px) {
-  .lotes-disponibles {
+  .lotes-disponibles .container-lotes-disponibles {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   footer {
     flex-direction: column;
     text-align: center;
+    padding: 15px 20px;
   }
-  footer img[src*=rodeo] {
+  footer .logo {
     margin-bottom: 15px;
   }
   footer .social-icons {
@@ -747,15 +669,220 @@ footer .footer-vaca {
     margin-top: 15px;
     order: 3;
   }
+  .navbar-brand {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+  }
+  .navbar-brand img {
+    height: 80px;
+  }
+  .navbar-brand h1 {
+    font-size: 1.2em;
+  }
+  .hero {
+    min-height: 300px;
+    padding: 15px;
+  }
+  .hero h2 {
+    font-size: 1.8em;
+  }
+  .hero button {
+    padding: 10px 20px;
+  }
+  .hero button a {
+    font-size: 1em;
+  }
+  .beneficios, .destacados, .registro, .pedidos-hacienda, .datos, .mensaje {
+    padding: 20px 15px;
+  }
+  .beneficios h2, .destacados h2, .registro h2, .pedidos-hacienda h2, .datos h2, .mensaje h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+  .beneficios > p, .destacados > p, .registro > p, .pedidos-hacienda > p, .datos > p, .mensaje > p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+  .beneficios-container, .destacados-container, .container-pedidos, .datos-container {
+    gap: 20px;
+  }
+  .tropa, .cotiza, .precios, .terneros, .vaca-cria, .vaquillonas, .telefono, .direcion, .mail {
+    padding: 20px;
+  }
+  .tropa img, .cotiza img, .precios img, .terneros img, .vaca-cria img, .vaquillonas img, .telefono img, .direcion img, .mail img {
+    width: 80px;
+  }
+  .tropa h3, .cotiza h3, .precios h3, .terneros h3, .vaca-cria h3, .vaquillonas h3, .telefono h3, .direcion h3, .mail h3 {
+    font-size: 1.2em;
+  }
+  .tropa p, .cotiza p, .precios p, .terneros p, .vaca-cria p, .vaquillonas p, .telefono p, .direcion p, .mail p {
+    font-size: 0.9em;
+  }
+  .registro-form, .mensaje-form {
+    padding: 20px;
+    gap: 15px;
+  }
+  .form-group {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+  .submit-button {
+    padding: 12px 20px;
+    max-width: 100%;
+  }
+  .iniciarsesion .login-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+  .iniciarsesion h1 {
+    font-size: 1.8em;
+  }
+  .iniciarsesion .form-group input {
+    width: 100%;
+    padding: 10px;
+  }
+  .iniciarsesion button[type=submit] {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+  .iniciarsesion .links {
+    font-size: 0.8em;
+    margin-top: 15px;
+  }
+  .map {
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 454px) {
+  .navbar-brand h1 {
+    flex-direction: column;
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 480px) {
-  .lotes-disponibles {
+  .lotes-disponibles .container-lotes-disponibles {
     grid-template-columns: 1fr;
   }
 }
-@media (max-width: 600px) {
-  .form-group {
-    flex: 1 1 100%;
+@media screen and (max-width: 350px) {
+  body {
+    font-size: 14px;
+  }
+  .container-fluid {
+    padding: 10px;
+  }
+  .navbar-brand img {
+    height: 70px;
+  }
+  .navbar-brand h1 {
+    font-size: 1em;
+  }
+  .hero {
+    min-height: 250px;
+  }
+  .hero h2 {
+    font-size: 1.5em;
+  }
+  .hero button {
+    padding: 8px 15px;
+  }
+  .hero button a {
+    font-size: 0.9em;
+  }
+  .beneficios, .destacados, .registro, .pedidos-hacienda, .datos, .mensaje {
+    padding: 15px 10px;
+  }
+  .beneficios h2, .destacados h2, .registro h2, .pedidos-hacienda h2, .datos h2, .mensaje h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+  }
+  .beneficios > p, .destacados > p, .registro > p, .pedidos-hacienda > p, .datos > p, .mensaje > p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+  .beneficios-container, .destacados-container, .container-pedidos, .datos-container {
+    gap: 15px;
+  }
+  .tropa, .cotiza, .precios, .terneros, .vaca-cria, .vaquillonas, .telefono, .direcion, .mail {
+    padding: 15px;
+  }
+  .tropa img, .cotiza img, .precios img, .terneros img, .vaca-cria img, .vaquillonas img, .telefono img, .direcion img, .mail img {
+    width: 70px;
+  }
+  .tropa h3, .cotiza h3, .precios h3, .terneros h3, .vaca-cria h3, .vaquillonas h3, .telefono h3, .direcion h3, .mail h3 {
+    font-size: 1.1em;
+  }
+  .tropa p, .cotiza p, .precios p, .terneros p, .vaca-cria p, .vaquillonas p, .telefono p, .direcion p, .mail p {
+    font-size: 0.85em;
+  }
+  .card {
+    padding: 15px;
+  }
+  .card video, .card img {
+    height: 150px;
+  }
+  .card .price {
+    font-size: 1.1em;
+  }
+  .card .location, .card .kg {
+    font-size: 0.8em;
+  }
+  .card button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+  }
+  .registro-form, .mensaje-form {
+    padding: 15px;
+    gap: 10px;
+  }
+  .form-group label {
+    font-size: 0.9em;
+  }
+  .form-group input, .form-group select, .box-mensaje textarea {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+  .submit-button {
+    padding: 10px 15px;
+    font-size: 1em;
+  }
+  footer {
+    padding: 15px 10px;
+  }
+  footer .logo, footer .footer-vaca {
+    height: 80px;
+    width: 80px;
+  }
+  footer .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+  footer p {
+    font-size: 0.85em;
+  }
+  .iniciarsesion .login-container {
+    width: 95%;
+    padding: 20px 15px;
+  }
+  .iniciarsesion h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  .iniciarsesion .form-group label {
+    font-size: 0.85em;
+  }
+  .iniciarsesion .form-group input {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+  .iniciarsesion button[type=submit] {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
+  .iniciarsesion .links {
+    font-size: 0.75em;
   }
 }
 
